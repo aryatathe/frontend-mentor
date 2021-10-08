@@ -35,14 +35,14 @@ const ResultsArea=({selected, setSelected, setScore})=>{
             <div id="player-choice" className="result-choice">
                 <h3>YOU PICKED</h3>
                 <div className={"result-icon "+choices[selected]+(winner==0?" winner":"")}><div className="wrapper">
-                    <img src={"../images/icon-"+choices[selected]+".svg"} alt={choices[selected]}></img>
+                    <img src={"images/icon-"+choices[selected]+".svg"} alt={choices[selected]}></img>
                 </div></div>
             </div>
             <div id="house-choice" className="result-choice">
                 <h3>THE HOUSE PICKED</h3>
                 {house<0
                     ?<div id="house-playing" />
-                    :<div className={"result-icon "+choices[house]+(winner==1?" winner":"")}><div className="wrapper"><img src={"../images/icon-"+choices[house]+".svg"} className={(winner==1?" winner":"")} alt={choices[house]}></img></div></div>
+                    :<div className={"result-icon "+choices[house]+(winner==1?" winner":"")}><div className="wrapper"><img src={"images/icon-"+choices[house]+".svg"} className={(winner==1?" winner":"")} alt={choices[house]}></img></div></div>
                 }
             </div>
             <div id="winner-box">
@@ -58,7 +58,7 @@ const SelectionArea=({setSelected})=>{
         <div id="selection-area">
             {choices.map((x,i)=>(
                 <button key={i} className={"selection-button "+x} onClick={()=>setSelected(i)}><div className="wrapper">
-                    <img key={i} className="hand-image" src={"../images/icon-"+x+".svg"} alt={x}></img></div>
+                    <img key={i} className="hand-image" src={"images/icon-"+x+".svg"} alt={x}></img></div>
                 </button>
             ))}
         </div>
@@ -78,7 +78,7 @@ const Main=()=>{
     return(
         <div id="main">
             <header id="game-header">
-                <img id="logo" src="../images/logo-bonus.svg"></img>
+                <img id="logo" src="images/logo-bonus.svg" alt="title"></img>
                 <div id="score-area">
                     <h4>SCORE</h4>
                     <h2>{score}</h2>
@@ -96,9 +96,9 @@ const Main=()=>{
                 <div id="rules-overlay" className={help?"rules-show":"rules-hide"}>
                     <div id="rules-box">
                         <h6>RULES</h6>
-                        <img src="../images/image-rules-bonus.svg"></img>
+                        <img src="images/image-rules-bonus.svg" alt="rules"></img>
                         <button onClick={()=>setHelp(0)}>
-                            <img src="../images/icon-close.svg"></img>
+                            <img src="images/icon-close.svg" alt="close"></img>
                         </button>
                     </div>
                 </div>
